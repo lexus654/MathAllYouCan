@@ -1,0 +1,13 @@
+.divider--lines {
+  height: 60px;
+  width: 100%;
+  border-top: 1px solid #f0d8a8;
+  border-bottom: 1px solid #f0d8a8;
+  display: flex;
+  justify-content: space-between;
+}
+.divider--box {
+  height: 60px;
+  width: 60px;
+  background-color: #f0d8a8;
+}

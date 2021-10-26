@@ -1,11 +1,13 @@
 import logo from "./logo.svg";
 import "./App.css";
-import Test from "./components/test1";
-
-function App() {
+import Divider from "./components/Divider";
+import Header from "./components/Header";
+function App(props) {
   return (
     <div className="App">
-      <Test />
+      <Divider></Divider>
+      <Header></Header>
+      <Divider></Divider>
     </div>
   );
 }
