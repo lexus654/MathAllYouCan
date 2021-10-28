@@ -1,0 +1,14 @@
+.searchBar {
+  margin-top: 30px;
+  width: 1440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search--input {
+  background-color: #ffff;
+  width: 533px;
+  height: 54px;
+  font-size: 27px;
+}
