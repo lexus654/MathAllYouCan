@@ -3,6 +3,7 @@ import "./App.css";
 import Divider from "./components/Divider";
 import Header from "./components/Header";
 import Search from "./components/Search";
+import Formula from "./components/formula/Formula";
 function App(props) {
   return (
     <div className="App">
@@ -10,6 +11,7 @@ function App(props) {
       <Header></Header>
       <Divider></Divider>
       <Search />
+      <Formula></Formula>
     </div>
   );
 }
