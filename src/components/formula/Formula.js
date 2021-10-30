@@ -1,4 +1,5 @@
 import AreaRect from "./AreaRect";
+
 const Formula = function () {
   const listOfFormula = [
     {
@@ -16,12 +17,8 @@ const Formula = function () {
   ];
 
   const value = listOfFormula.map((element, key) => {
-    return element.name;
+    return <div className="inline">{element.name}</div>;
   });
-  return (
-    <div>
-      <h1>{value}</h1>
-    </div>
-  );
+  return <div>{value}</div>;
 };
 export default Formula;

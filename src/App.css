@@ -37,6 +37,8 @@
   }
 } */
 
-* {
+.App {
   background-color: #353232;
+  width: 1440px;
+  height: 1024px;
 }
