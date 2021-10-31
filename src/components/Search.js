@@ -61,29 +61,40 @@ const Search = (props) => {
     },
   ];
   let [formula, setFormula] = useState(listOfFormula[2].name);
-
+  const [filteredData, setFilteredData] = useState([]);
+  const handleFilter = (event) => {
+    const searchWord = event.target.value;
+    const newFilter = listOfFormula.filter((value) => {
+      return value.name.toLowerCase().includes(searchWord.toLowerCase());
+    });
+    setFilteredData(newFilter);
+  };
   return (
     <div className="searchBar">
       <input
+        onChange={handleFilter}
         className="search--input"
         type="text"
         placeholder="Search.."
       ></input>
-      <div className="dataResult">
-        {listOfFormula.map((value, key) => {
-          return (
-            <a
-              onClick={function () {
-                setFormula(listOfFormula[`${key}`].name);
-              }}
-              className="dataItem"
-              href="#"
-            >
-              <p> {value.name}</p>
-            </a>
-          );
-        })}
-      </div>
+      {filteredData.length != 0 && (
+        <div className="dataResult">
+          {filteredData.map((value, key) => {
+            return (
+              <a
+                onClick={function () {
+                  setFormula(listOfFormula[`${key}`].name);
+                  filteredData.length = 0;
+                }}
+                className="dataItem"
+                href="#"
+              >
+                <p> {value.name}</p>
+              </a>
+            );
+          })}
+        </div>
+      )}
       <Display formula={formula}></Display>
     </div>
   );
