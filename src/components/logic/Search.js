@@ -1,70 +1,107 @@
-import "./Search.css";
 import React, { useState } from "react";
 import AreaRect from "../formula/AreaRect";
 import styled from "styled-components";
 import Display from "../dumbComponents/Display";
+import AreaTriangle from "../formula/AreaTriangle";
+import AreaRectangle from "../formula/AreaRectangle";
+const Wrapper = styled.div`
+  box-sizing: border-box;
+  border: solid 4px white;
+  height: 548px;
+  width: 858px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 20px;
+  padding: 50px;
+  & .wrapper--formula {
+    width: 283px;
+    height: 425px;
+    border-radius: 22px;
+    border: solid white 1px;
+  }
+  & .wrapper--content {
+    display: flex;
+    flex-direction: column;
+    width: 365px;
 
+    & .wrapper--content--headings {
+      color: white;
+      font-size: 35px;
+    }
+    & .wrapper--content--text {
+      color: white;
+      text-align: justify;
+    }
+  }
+`;
+
+const SearchBar = styled.div`
+  margin-top: 10px;
+  width: 1440px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  flex-direction: column;
+
+  & .search--input {
+    background-color: #7e7c7c;
+    width: 533px;
+    height: 54px;
+    font-size: 27px;
+    color: white;
+  }
+
+  & ::placeholder {
+    color: white;
+  }
+
+  & .search--input:focus {
+    outline-color: #f0d8a8;
+  }
+
+  & .dataResult {
+    width: 533px;
+    height: 334px;
+
+    overflow: hidden;
+    overflow-y: auto;
+    background-color: white;
+  }
+
+  & .dataResult .dataItem {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+  }
+
+  & .dataItem {
+    margin-left: 10px;
+  }
+  & a {
+    text-decoration: none;
+  }
+  & a:hover {
+    background-color: lightblue;
+  }
+`;
 const Search = (props) => {
-  const wrapper = styled.div`
-    border: solid 1px white;
-    height: 548px;
-    width: 858px;
-  `;
   const listOfFormula = [
     {
       name: "Area of Rectangle",
-      formula: <AreaRect></AreaRect>,
+      description:
+        "The area of a rectangle (A) is the product of its length 'a' and width or breadth 'b'. So, Area of Rectangle = (a × b) square units.",
+      formula: <AreaRectangle></AreaRectangle>,
     },
     {
-      name: "Area of Square",
-      formula: <AreaRect></AreaRect>,
-    },
-    {
-      name: "Area of triangle",
-      formula: <AreaRect></AreaRect>,
-    },
-    {
-      name: "Area of 1",
-      formula: <AreaRect></AreaRect>,
-    },
-    {
-      name: "Area of 2",
-      formula: <AreaRect></AreaRect>,
-    },
-    {
-      name: "Area of 3",
-      formula: <AreaRect></AreaRect>,
-    },
-    {
-      name: "Area of 4",
-      formula: <AreaRect></AreaRect>,
-    },
-    {
-      name: "Area of 1343",
-      formula: <AreaRect></AreaRect>,
-    },
-    {
-      name: "Area of 234234",
-      formula: <AreaRect></AreaRect>,
-    },
-    {
-      name: "Area of t1231",
-      formula: <AreaRect></AreaRect>,
-    },
-    {
-      name: "Area of 535",
-      formula: <AreaRect></AreaRect>,
-    },
-    {
-      name: "Area of t23123",
-      formula: <AreaRect></AreaRect>,
-    },
-    {
-      name: "Area of t4636",
-      formula: <AreaRect></AreaRect>,
+      name: "Area of Triangle",
+      description:
+        "To calculate the area of a triangle, multiply the height by the width (this is also known as the 'base') then divide by 2.",
+      formula: <AreaTriangle></AreaTriangle>,
     },
   ];
-  let [formula, setFormula] = useState(listOfFormula[2].name);
+  let [formula, setFormula] = useState(listOfFormula[0]);
   const [filteredData, setFilteredData] = useState([]);
   const handleFilter = (event) => {
     const searchWord = event.target.value;
@@ -74,7 +111,7 @@ const Search = (props) => {
     setFilteredData(newFilter);
   };
   return (
-    <div className="searchBar">
+    <SearchBar className="searchBar">
       <input
         onChange={handleFilter}
         className="search--input"
@@ -87,7 +124,7 @@ const Search = (props) => {
             return (
               <a
                 onClick={function () {
-                  setFormula(listOfFormula[`${key}`].name);
+                  setFormula(listOfFormula[`${key}`]);
                   filteredData.length = 0;
                 }}
                 className="dataItem"
@@ -99,18 +136,14 @@ const Search = (props) => {
           })}
         </div>
       )}
-      <div className={{ wrapper }}>
+      <Wrapper>
         <div className="wrapper--content">
-          <h1 className="wrapper--content--headings">PythagoreanA</h1>
-          <p className="wrapper--content--text">
-            Hello this is testing for the formula Itself
-          </p>
+          <h1 className="wrapper--content--headings">{formula.name}</h1>
+          <p className="wrapper--content--text">{formula.description}</p>
         </div>
-        <div className="wrapper--formula">
-          <Display formula={formula}></Display>
-        </div>
-      </div>
-    </div>
+        <div className="wrapper--formula">{formula.formula}</div>
+      </Wrapper>
+    </SearchBar>
   );
 };
 
