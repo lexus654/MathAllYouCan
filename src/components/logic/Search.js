@@ -1,11 +1,15 @@
 import "./Search.css";
 import React, { useState } from "react";
-import Formula from "./formula/Formula";
-import AreaRect from "../components/formula/AreaRect";
+import AreaRect from "../formula/AreaRect";
 import styled from "styled-components";
-import Display from "./Display";
+import Display from "../dumbComponents/Display";
 
 const Search = (props) => {
+  const wrapper = styled.div`
+    border: solid 1px white;
+    height: 548px;
+    width: 858px;
+  `;
   const listOfFormula = [
     {
       name: "Area of Rectangle",
@@ -95,7 +99,17 @@ const Search = (props) => {
           })}
         </div>
       )}
-      <Display formula={formula}></Display>
+      <div className={{ wrapper }}>
+        <div className="wrapper--content">
+          <h1 className="wrapper--content--headings">PythagoreanA</h1>
+          <p className="wrapper--content--text">
+            Hello this is testing for the formula Itself
+          </p>
+        </div>
+        <div className="wrapper--formula">
+          <Display formula={formula}></Display>
+        </div>
+      </div>
     </div>
   );
 };

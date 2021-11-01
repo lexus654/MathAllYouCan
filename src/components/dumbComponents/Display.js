@@ -1,4 +1,4 @@
-import Search from "./Search";
+import Search from "../logic/Search";
 const Display = (props) => {
   return (
     <div>

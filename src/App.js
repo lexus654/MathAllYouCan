@@ -1,9 +1,9 @@
 import logo from "./logo.svg";
 import React, { useState } from "react";
 import "./App.css";
-import Divider from "./components/Divider";
-import Header from "./components/Header";
-import Search from "./components/Search";
+import Divider from "../src/components/dumbComponents/Divider";
+import Header from "../src/components/dumbComponents/Header";
+import Search from "../src/components/logic/Search";
 
 function App(props) {
   return (
