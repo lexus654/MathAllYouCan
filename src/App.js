@@ -4,13 +4,17 @@ import "./App.css";
 import Divider from "../src/components/dumbComponents/Divider";
 import Header from "../src/components/dumbComponents/Header";
 import Search from "../src/components/logic/Search";
+import styled from "styled-components";
 
 function App(props) {
   return (
     <div className="App">
       <Divider></Divider>
+
       <Header></Header>
+
       <Divider></Divider>
+
       <Search />
     </div>
   );
