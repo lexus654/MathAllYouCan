@@ -2,14 +2,13 @@ import styled from "styled-components";
 
 const Wrapper = styled.div`
   display: flex;
-  padding-left: 10px;
-  padding-right: 10px;
+
   justify-content: space-around;
   align-items: center;
 
   /* Rectangle 52 */
 
-  width: 1439px;
+  width: 1440px;
   height: 142px;
   left: 0px;
   top: 30px;

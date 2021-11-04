@@ -4,56 +4,29 @@ import styled from "styled-components";
 import Display from "../dumbComponents/Display";
 import AreaTriangle from "../formula/AreaTriangle";
 import AreaRectangle from "../formula/AreaRectangle";
-const Wrapper = styled.div`
-  box-sizing: border-box;
-  border: solid 4px white;
-  height: 548px;
-  width: 858px;
-  display: flex;
-  justify-content: space-between;
-  border-radius: 20px;
-  padding: 50px;
-  & .wrapper--formula {
-    width: 283px;
-    height: 425px;
-    border-radius: 22px;
-    border: solid white 1px;
-  }
-  & .wrapper--content {
-    display: flex;
-    flex-direction: column;
-    width: 365px;
-
-    & .wrapper--content--headings {
-      color: white;
-      font-size: 35px;
-    }
-    & .wrapper--content--text {
-      color: white;
-      text-align: justify;
-    }
-  }
-`;
+import Compute from "./Compute";
 
 const SearchBar = styled.div`
   margin-top: 10px;
   width: 1440px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+
   align-items: center;
   position: relative;
-  flex-direction: column;
-
+  flex-direction: row;
   & .search--input {
-    background-color: #7e7c7c;
+    background-color: #d7d6d6;
     width: 533px;
     height: 54px;
     font-size: 27px;
-    color: white;
+    color: #020202;
+    border: solid 1px #d7d6d6;
+    border-radius: 20px;
   }
 
   & ::placeholder {
-    color: white;
+    color: #020202;
   }
 
   & .search--input:focus {
@@ -61,12 +34,13 @@ const SearchBar = styled.div`
   }
 
   & .dataResult {
-    width: 533px;
+    width: 523px;
     height: 334px;
-
+    position: absolute;
+    top: 95px;
     overflow: hidden;
     overflow-y: auto;
-    background-color: white;
+    background-color: #d7d6d6;
   }
 
   & .dataResult .dataItem {
@@ -84,6 +58,24 @@ const SearchBar = styled.div`
   }
   & a:hover {
     background-color: lightblue;
+  }
+`;
+
+const SecondWrapper = styled.div`
+  width: 382px;
+  height: 548px;
+  background-color: #353232;
+  border-radius: 20px;
+  border: solid 1px white;
+`;
+const BigWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  & .WrapperRow {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
   }
 `;
 const Search = (props) => {
@@ -111,39 +103,45 @@ const Search = (props) => {
     setFilteredData(newFilter);
   };
   return (
-    <SearchBar className="searchBar">
-      <input
-        onChange={handleFilter}
-        className="search--input"
-        type="text"
-        placeholder="Search.."
-      ></input>
-      {filteredData.length != 0 && (
-        <div className="dataResult">
-          {filteredData.map((value, key) => {
-            return (
-              <a
-                onClick={function () {
-                  setFormula(listOfFormula[`${key}`]);
-                  filteredData.length = 0;
-                }}
-                className="dataItem"
-                href="#"
-              >
-                <p> {value.name}</p>
-              </a>
-            );
+    <BigWrapper>
+      <SearchBar className="searchBar">
+        <img src={require("./math.png").default} height={119} width={119}></img>
+        <input
+          onChange={handleFilter}
+          className="search--input"
+          type="text"
+          placeholder="Search.."
+        ></input>
+
+        {filteredData.length != 0 && (
+          <div className="dataResult">
+            {filteredData.map((value, key) => {
+              return (
+                <a
+                  onClick={function () {
+                    setFormula(listOfFormula[`${key}`]);
+                    filteredData.length = 0;
+                  }}
+                  className="dataItem"
+                  href="#"
+                >
+                  <p> {value.name}</p>
+                </a>
+              );
+            })}
+          </div>
+        )}
+        <img src={require("./math.png").default} height={119} width={119}></img>
+      </SearchBar>
+      <div className="WrapperRow">
+        <SecondWrapper>
+          {listOfFormula.map((value, key) => {
+            return <p>{value.name}</p>;
           })}
-        </div>
-      )}
-      <Wrapper>
-        <div className="wrapper--content">
-          <h1 className="wrapper--content--headings">{formula.name}</h1>
-          <p className="wrapper--content--text">{formula.description}</p>
-        </div>
-        <div className="wrapper--formula">{formula.formula}</div>
-      </Wrapper>
-    </SearchBar>
+        </SecondWrapper>
+        <Compute formula={formula}></Compute>
+      </div>
+    </BigWrapper>
   );
 };
 
