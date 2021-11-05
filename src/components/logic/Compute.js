@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import bg from "./bg2.png";
+import bg from "./bg.png";
 
 const Wrapper = styled.div`
   box-sizing: border-box;

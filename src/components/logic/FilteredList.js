@@ -7,6 +7,7 @@ const SecondWrapper = styled.div`
   background-color: #353232;
   border-radius: 20px;
   border: solid 1px white;
+  box-shadow: -14px 16px 16px rgba(255, 255, 255, 0.1);
   & .dataResult {
     width: 382px;
     height: 548px;
