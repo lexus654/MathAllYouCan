@@ -1,14 +1,20 @@
 import styled from "styled-components";
+import bg from "./bg2.png";
 
 const Wrapper = styled.div`
   box-sizing: border-box;
-  border: solid 4px white;
-  height: 548px;
+
   width: 858px;
-  display: flex;
+  height: 548px;
   justify-content: space-between;
-  border-radius: 20px;
   padding: 50px;
+  display: flex;
+  background: url(${bg});
+  border: 1px solid #ffffff;
+  box-sizing: border-box;
+  box-shadow: -14px 16px 16px rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+
   & .wrapper--formula {
     width: 283px;
     height: 425px;
