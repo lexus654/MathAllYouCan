@@ -6,7 +6,7 @@ import AreaTriangle from "../formula/AreaTriangle";
 import AreaRectangle from "../formula/AreaRectangle";
 import Compute from "./Compute";
 import FilteredList from "./FilteredList";
-
+// Style for the search bar
 const SearchBar = styled.div`
   margin-top: 10px;
   width: 1440px;
@@ -34,39 +34,7 @@ const SearchBar = styled.div`
     outline-color: #f0d8a8;
   }
 `;
-
-// const SecondWrapper = styled.div`
-//   width: 382px;
-//   height: 548px;
-//   background-color: #353232;
-//   border-radius: 20px;
-//   border: solid 1px white;
-//   & .dataResult {
-//     width: 382px;
-//     height: 548px;
-
-//     overflow: hidden;
-//     overflow-y: auto;
-//     /* background-color: #d7d6d6; */
-//   }
-
-//   & .dataResult .dataItem {
-//     width: 100%;
-//     height: 50px;
-//     display: flex;
-//     align-items: center;
-//   }
-
-//   & .dataItem {
-//     margin-left: 10px;
-//   }
-//   & a {
-//     text-decoration: none;
-//   }
-//   & a:hover {
-//     background-color: lightblue;
-//   }
-// `;
+// Big wrapper Styles
 const BigWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -77,7 +45,9 @@ const BigWrapper = styled.div`
     justify-content: space-around;
   }
 `;
+// JSX code for the search, it icludes the filter method and change of display
 const Search = (props) => {
+  // Object containing all of the formula as well as their own definition
   const listOfFormula = [
     {
       name: "Area of Rectangle",
@@ -92,8 +62,11 @@ const Search = (props) => {
       formula: <AreaTriangle></AreaTriangle>,
     },
   ];
+  // state for changing of the formula in the display
   let [formula, setFormula] = useState(listOfFormula[0]);
+  // state for the filtering of data that will be display on the search
   const [filteredData, setFilteredData] = useState([]);
+  // event for filtering the data base on the user input
   const handleFilter = (event) => {
     const searchWord = event.target.value;
     const newFilter = listOfFormula.filter((value) => {
@@ -101,8 +74,11 @@ const Search = (props) => {
     });
     setFilteredData(newFilter);
   };
+  // Start of JSX code
   return (
+    // Big wrapper is the Main container
     <BigWrapper>
+      {/* SearchBar includes the input and image for design purposes */}
       <SearchBar className="searchBar">
         <img src={require("./math.png").default} height={119} width={119}></img>
         <input
@@ -111,16 +87,17 @@ const Search = (props) => {
           type="text"
           placeholder="Search.."
         ></input>
-
         <img src={require("./math.png").default} height={119} width={119}></img>
       </SearchBar>
+      {/* middle section of the page contains the filtered list of formula and the computational div */}
       <div className="WrapperRow">
+        {/* div of filtered list of formula */}
         <FilteredList
           filteredData={filteredData}
           listOfFormula={listOfFormula}
           setFormula={setFormula}
         ></FilteredList>
-
+        {/* div for the computational */}
         <Compute formula={formula}></Compute>
       </div>
     </BigWrapper>

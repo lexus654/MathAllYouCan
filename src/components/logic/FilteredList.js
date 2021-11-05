@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Search from "./Search";
-
+// styles of the Second Wrapper
 const SecondWrapper = styled.div`
   width: 382px;
   height: 548px;
@@ -37,8 +37,10 @@ const SecondWrapper = styled.div`
 const FilteredList = (props) => {
   return (
     <SecondWrapper>
+      {/* ternary operator that change the display on the filtered list div  */}
       {props.filteredData.length != 0 ? (
         <div className="dataResult">
+          {/* returns a map from the filtered data state */}
           {props.filteredData.map((value, key) => {
             return (
               <a
@@ -56,6 +58,7 @@ const FilteredList = (props) => {
         </div>
       ) : (
         <div className="dataResult">
+          {/* returns a map from the list of formula */}
           {props.listOfFormula.map((value, key) => {
             return (
               <a
