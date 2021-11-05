@@ -32,15 +32,21 @@ const SearchBar = styled.div`
   & .search--input:focus {
     outline-color: #f0d8a8;
   }
+`;
 
+const SecondWrapper = styled.div`
+  width: 382px;
+  height: 548px;
+  background-color: #353232;
+  border-radius: 20px;
+  border: solid 1px white;
   & .dataResult {
-    width: 523px;
-    height: 334px;
-    position: absolute;
-    top: 95px;
+    width: 382px;
+    height: 548px;
+
     overflow: hidden;
     overflow-y: auto;
-    background-color: #d7d6d6;
+    /* background-color: #d7d6d6; */
   }
 
   & .dataResult .dataItem {
@@ -59,14 +65,6 @@ const SearchBar = styled.div`
   & a:hover {
     background-color: lightblue;
   }
-`;
-
-const SecondWrapper = styled.div`
-  width: 382px;
-  height: 548px;
-  background-color: #353232;
-  border-radius: 20px;
-  border: solid 1px white;
 `;
 const BigWrapper = styled.div`
   display: flex;
@@ -113,31 +111,45 @@ const Search = (props) => {
           placeholder="Search.."
         ></input>
 
-        {filteredData.length != 0 && (
-          <div className="dataResult">
-            {filteredData.map((value, key) => {
-              return (
-                <a
-                  onClick={function () {
-                    setFormula(listOfFormula[`${key}`]);
-                    filteredData.length = 0;
-                  }}
-                  className="dataItem"
-                  href="#"
-                >
-                  <p> {value.name}</p>
-                </a>
-              );
-            })}
-          </div>
-        )}
         <img src={require("./math.png").default} height={119} width={119}></img>
       </SearchBar>
       <div className="WrapperRow">
         <SecondWrapper>
-          {listOfFormula.map((value, key) => {
-            return <p>{value.name}</p>;
-          })}
+          {filteredData.length != 0 ? (
+            <div className="dataResult">
+              {filteredData.map((value, key) => {
+                return (
+                  <a
+                    onClick={function () {
+                      setFormula(listOfFormula[`${key}`]);
+                      filteredData.length = 0;
+                    }}
+                    className="dataItem"
+                    href="#"
+                  >
+                    <p> {value.name}</p>
+                  </a>
+                );
+              })}
+            </div>
+          ) : (
+            <div className="dataResult">
+              {listOfFormula.map((value, key) => {
+                return (
+                  <a
+                    onClick={function () {
+                      setFormula(listOfFormula[`${key}`]);
+                      filteredData.length = 0;
+                    }}
+                    className="dataItem"
+                    href="#"
+                  >
+                    <p> {value.name}</p>
+                  </a>
+                );
+              })}
+            </div>
+          )}
         </SecondWrapper>
         <Compute formula={formula}></Compute>
       </div>
