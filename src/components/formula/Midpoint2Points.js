@@ -168,7 +168,7 @@ const Midpoint2Points = (props) => {
         Calculate
       </button>
       <div className="column">
-        <p className="answer"> possible values of x = </p>
+        <p className="answer"> Midpoint = </p>
         <div className="answer--box">
           <p> {valueX}</p>
         </div>

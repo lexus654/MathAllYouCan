@@ -168,7 +168,7 @@ const Slope2Points = (props) => {
         Calculate
       </button>
       <div className="column">
-        <p className="answer"> possible values of x = </p>
+        <p className="answer"> Slope = </p>
         <div className="answer--box">
           <p> {Math.round(valueX * 100) / 100}</p>
         </div>
