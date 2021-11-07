@@ -8,6 +8,7 @@ const SecondWrapper = styled.div`
   border-radius: 20px;
   border: solid 1px white;
   box-shadow: -14px 16px 16px rgba(255, 255, 255, 0.1);
+
   & .dataResult {
     width: 382px;
     height: 548px;
@@ -18,25 +19,34 @@ const SecondWrapper = styled.div`
   }
 
   & .dataResult .dataItem {
-    width: 100%;
+    width: 342px;
     height: 50px;
     display: flex;
     align-items: center;
   }
 
   & .dataItem {
-    margin-left: 10px;
+    border-bottom: 1px solid #f0d8a8;
+    margin-left: 20px;
   }
   & a {
     text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding-left: 20px;
   }
   & a:hover {
-    background-color: lightblue;
+    color: #f0d8a8;
+  }
+  & .header {
+    color: white;
+    text-align: center;
   }
 `;
 const FilteredList = (props) => {
   return (
     <SecondWrapper>
+      <h1 className="header">List of Formulas</h1>
       {/* ternary operator that change the display on the filtered list div  */}
       {props.filteredData.length != 0 ? (
         <div className="dataResult">
@@ -44,6 +54,7 @@ const FilteredList = (props) => {
           {props.filteredData.map((value, key) => {
             return (
               <a
+                onF
                 onClick={function () {
                   props.setFormula(props.listOfFormula[`${key}`]);
                   props.filteredData.length = 0;

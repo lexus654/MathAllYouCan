@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import AreaRect from "../formula/AreaRect";
+
 import styled from "styled-components";
-import Display from "../dumbComponents/Display";
+
 import AreaTriangle from "../formula/AreaTriangle";
 import AreaRectangle from "../formula/AreaRectangle";
 import Compute from "./Compute";
