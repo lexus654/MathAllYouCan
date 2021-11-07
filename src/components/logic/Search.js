@@ -8,6 +8,7 @@ import Compute from "./Compute";
 import FilteredList from "./FilteredList";
 import Distance2Points from "../formula/Distance2Point";
 import Slope2Points from "../formula/Slope2Points";
+import Midpoint2Points from "../formula/Midpoint2Points";
 // Style for the search bar
 const SearchBar = styled.div`
   margin-top: 10px;
@@ -86,6 +87,12 @@ const Search = (props) => {
       description:
         "Use the slope formula to find the slope of a line given the coordinates of two points on the line. The slope formula is m=(y2-y1)/(x2-x1), or the change in the y values over the change in the x values. The coordinates of the first point represent x1 and y1. The coordinates of the second points are x2, y2.",
       formula: <Slope2Points></Slope2Points>,
+    },
+    {
+      name: "Midpoint of Two Points",
+      description:
+        "The formula for midpoint = (x1 + x2)/2, (y1 + y2)/2. Substituting in the two x coordinates and two y coordinates from the endpoint",
+      formula: <Midpoint2Points></Midpoint2Points>,
     },
   ];
   // state for changing of the formula in the display

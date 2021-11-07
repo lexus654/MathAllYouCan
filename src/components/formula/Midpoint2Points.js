@@ -93,7 +93,7 @@ const Input = styled.input`
     border: solid 2px green;
   }
 `;
-const Slope2Points = (props) => {
+const Midpoint2Points = (props) => {
   let valueAParameter = 0;
   let valueBParameter = 0;
   let valueCParameter = 0;
@@ -122,7 +122,7 @@ const Slope2Points = (props) => {
     valueDParameter = valueD;
   };
   const Calculate = function () {
-    setValueX((valueC - valueD) / (valueA - valueB));
+    setValueX(`${(valueA + valueB) / 2} , ${(valueC + valueD) / 2}`);
   };
   return (
     <FormulaDiv>
@@ -170,11 +170,11 @@ const Slope2Points = (props) => {
       <div className="column">
         <p className="answer"> possible values of x = </p>
         <div className="answer--box">
-          <p> {Math.round(valueX * 100) / 100}</p>
+          <p> {valueX}</p>
         </div>
       </div>
     </FormulaDiv>
   );
 };
 
-export default Slope2Points;
+export default Midpoint2Points;
