@@ -7,6 +7,7 @@ import AreaRectangle from "../formula/AreaRectangle";
 import Compute from "./Compute";
 import FilteredList from "./FilteredList";
 import Distance2Points from "../formula/Distance2Point";
+import Slope2Points from "../formula/Slope2Points";
 // Style for the search bar
 const SearchBar = styled.div`
   margin-top: 10px;
@@ -79,6 +80,12 @@ const Search = (props) => {
       description:
         "Distance between two points P(x1,y1) and Q(x2,y2) is given by: d(P, Q) = √ (x2 − x1)2 + (y2 − y1)2 {Distance formula} 2. Distance of a point P(x, y) from the origin is given by d(0,P) = √ x2 + y2.",
       formula: <Distance2Points></Distance2Points>,
+    },
+    {
+      name: "Slope of Two Points",
+      description:
+        "Use the slope formula to find the slope of a line given the coordinates of two points on the line. The slope formula is m=(y2-y1)/(x2-x1), or the change in the y values over the change in the x values. The coordinates of the first point represent x1 and y1. The coordinates of the second points are x2, y2.",
+      formula: <Slope2Points></Slope2Points>,
     },
   ];
   // state for changing of the formula in the display
