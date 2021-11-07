@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 import styled from "styled-components";
-
+import ArithmeticMean from "../formula/ArithmeticMean";
 import AreaTriangle from "../formula/AreaTriangle";
 import AreaRectangle from "../formula/AreaRectangle";
 import Compute from "./Compute";
@@ -60,6 +60,12 @@ const Search = (props) => {
       description:
         "To calculate the area of a triangle, multiply the height by the width (this is also known as the 'base') then divide by 2.",
       formula: <AreaTriangle></AreaTriangle>,
+    },
+    {
+      name: "Arithmetic Mean",
+      description:
+        "The mean, or average, is calculated by adding up the scores and dividing the total by the number of scores",
+      formula: <ArithmeticMean></ArithmeticMean>,
     },
   ];
   // state for changing of the formula in the display
