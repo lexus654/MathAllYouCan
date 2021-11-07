@@ -93,16 +93,17 @@ const Input = styled.input`
     border: solid 2px green;
   }
 `;
-const QuadraticEquation = (props) => {
+const Distance2Points = (props) => {
   let valueAParameter = 0;
   let valueBParameter = 0;
   let valueCParameter = 0;
+  let valueDParameter = 0;
 
   const [valueA, setValueA] = useState("");
   const [valueB, setValueB] = useState("");
   const [valueC, setValueC] = useState("");
-  const [firstRoot, setFirstRoot] = useState("");
-  const [secondRoot, setSecondRoot] = useState("");
+  const [valueD, setValueD] = useState("");
+
   const [valueX, setValueX] = useState("??");
   const VariableA = function (event) {
     setValueA(event.target.value);
@@ -116,60 +117,65 @@ const QuadraticEquation = (props) => {
     setValueB(event.target.value);
     valueBParameter = valueB;
   };
-  const CalculateArea = function () {
-    setFirstRoot(
-      (-valueB + Math.sqrt(valueB * valueB - 4 * valueA * valueC)) /
-        (2 * valueA)
-    );
-    setSecondRoot(
-      (-valueB - Math.sqrt(valueB * valueB - 4 * valueA * valueC)) /
-        (2 * valueA)
-    );
-    console.log(firstRoot);
-    setValueX(`${firstRoot}, ${secondRoot}`);
+  const VariableD = function (event) {
+    setValueD(event.target.value);
+    valueDParameter = valueD;
+  };
+  const Calculate = function () {
+    setValueX(Math.sqrt((valueA - valueB) ** 2 + (valueC - valueD) ** 2));
   };
   return (
     <FormulaDiv>
-      <p>Input Values for a, b and c to find x</p>
+      <p>
+        Input values X1, X2 , Y1 and Y2 to find the distance between the two
+        points
+      </p>
       <div className="formula--wrapper">
         <div className="inline">
-          <p>a =</p>
+          <p>X1 =</p>
 
           <Input
             onChange={VariableA}
             type="number"
-            placeholder="Value of a"
+            placeholder="Value of X1"
             value={valueA}
           ></Input>
-          <p className="marginB">b =</p>
+          <p className="marginB">X2 =</p>
           <Input
             onChange={VariableB}
             type="number"
-            placeholder="Value of b"
+            placeholder="Value of X2"
             value={valueB}
           ></Input>
         </div>
         <div className="inline">
-          <p>c =</p>
+          <p>Y1 =</p>
           <Input
             onChange={VariableC}
             type="number"
-            placeholder="Value of c"
+            placeholder="Value of Y1"
             value={valueC}
+          ></Input>
+          <p className="marginB">Y2 =</p>
+          <Input
+            onChange={VariableD}
+            type="number"
+            placeholder="Value of Y2"
+            value={valueD}
           ></Input>
         </div>
       </div>
-      <button className="Button" onClick={CalculateArea}>
+      <button className="Button" onClick={Calculate}>
         Calculate
       </button>
       <div className="column">
         <p className="answer"> possible values of x = </p>
         <div className="answer--box">
-          <p> {valueX}</p>
+          <p> {Math.round(valueX * 100) / 100}</p>
         </div>
       </div>
     </FormulaDiv>
   );
 };
 
-export default QuadraticEquation;
+export default Distance2Points;

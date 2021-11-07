@@ -6,6 +6,7 @@ import AreaTriangle from "../formula/AreaTriangle";
 import AreaRectangle from "../formula/AreaRectangle";
 import Compute from "./Compute";
 import FilteredList from "./FilteredList";
+import Distance2Points from "../formula/Distance2Point";
 // Style for the search bar
 const SearchBar = styled.div`
   margin-top: 10px;
@@ -72,6 +73,12 @@ const Search = (props) => {
       description:
         "The standard form of a quadratic equation is ax2 + bx + c = 0, where a, b are the coefficients, x is the variable, and c is the constant term. The first condition for an equation to be a quadratic equation is the coefficient of x2 is a non-zero term(a ≠0).",
       formula: <QuadraticEquation></QuadraticEquation>,
+    },
+    {
+      name: "Distance of Two Points",
+      description:
+        "Distance between two points P(x1,y1) and Q(x2,y2) is given by: d(P, Q) = √ (x2 − x1)2 + (y2 − y1)2 {Distance formula} 2. Distance of a point P(x, y) from the origin is given by d(0,P) = √ x2 + y2.",
+      formula: <Distance2Points></Distance2Points>,
     },
   ];
   // state for changing of the formula in the display
