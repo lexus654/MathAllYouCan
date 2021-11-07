@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import QuadraticEquation from "../formula/QuadraticEquation";
 import styled from "styled-components";
 import ArithmeticMean from "../formula/ArithmeticMean";
 import AreaTriangle from "../formula/AreaTriangle";
@@ -66,6 +66,12 @@ const Search = (props) => {
       description:
         "The mean, or average, is calculated by adding up the scores and dividing the total by the number of scores",
       formula: <ArithmeticMean></ArithmeticMean>,
+    },
+    {
+      name: "Quadratic Equations",
+      description:
+        "The standard form of a quadratic equation is ax2 + bx + c = 0, where a, b are the coefficients, x is the variable, and c is the constant term. The first condition for an equation to be a quadratic equation is the coefficient of x2 is a non-zero term(a ≠0).",
+      formula: <QuadraticEquation></QuadraticEquation>,
     },
   ];
   // state for changing of the formula in the display
