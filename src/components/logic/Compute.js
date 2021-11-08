@@ -36,6 +36,8 @@ const Wrapper = styled.div`
     }
   }
 `;
+
+// Components that contains the output of the Logic folder
 const Compute = (props) => {
   return (
     <Wrapper>

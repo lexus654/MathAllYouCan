@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import React, { useState } from "react";
-
+// Logic and components to get the Slope between 2 points Formula
 const FormulaDiv = styled.div`
   display: flex;
   flex-direction: column;

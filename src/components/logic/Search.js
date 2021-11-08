@@ -124,7 +124,7 @@ const Search = (props) => {
       </SearchBar>
       {/* middle section of the page contains the filtered list of formula and the computational div */}
       <div className="WrapperRow">
-        {/* div of filtered list of formula */}
+        {/* props will be pass to the FilteredList Component */}
         <FilteredList
           filteredData={filteredData}
           listOfFormula={listOfFormula}

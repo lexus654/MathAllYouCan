@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import React, { useState } from "react";
+// Logic and components for the Arithmetic Mean Formula
 const Button = styled.button`
   width: 85px;
   height: 30px;
