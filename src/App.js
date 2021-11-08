@@ -9,12 +9,12 @@ import styled from "styled-components";
 function App(props) {
   return (
     <div className="App">
+      {/* Divider Js is the design border */}
       <Divider></Divider>
-
+      {/* Header contains the Logo */}
       <Header></Header>
-
       <Divider></Divider>
-
+      {/* Search contains all the logic as well the code */}
       <Search />
     </div>
   );
