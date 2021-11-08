@@ -1,3 +1,23 @@
+# Project Description
+## Title: Math all you can. 
+## Objective: 
+    Create a web app that holds a large amount of mathematics formula 
+    crossing from Geometry, statistics, calculus, etc.
+## Purpose: 
+      The purpose of this web app is to help students in solving mathematic equation
+      in their studies by making use of only a single website. 
+## Scope: 
+      Geometry, Statistics and other various mathematical formulas 
+ Note: That is doesn't include derivation of formula
+## Target Audience: 
+    Elementary - Senior Highschool Students
+## Technology required: 
+    JavaScript-React, HTML CSS, Styled Components
+## Tools 
+    Visual Studio Code, Figma, 
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
