@@ -29,18 +29,25 @@ const SecondWrapper = styled.div`
     border-bottom: 1px solid #f0d8a8;
     margin-left: 20px;
   }
-  & a {
+
+  & .dataItem {
     text-decoration: none;
     color: white;
     font-size: 18px;
     padding-left: 20px;
   }
-  & a:hover {
+  & .dataItem:hover {
     color: #f0d8a8;
   }
+
   & .header {
     color: white;
     text-align: center;
+  }
+  & .dataItem:focus {
+    color: #f0d8a8;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
   }
 `;
 const FilteredList = (props) => {
@@ -57,7 +64,6 @@ const FilteredList = (props) => {
                 onF
                 onClick={function () {
                   props.setFormula(props.listOfFormula[`${key}`]);
-                  props.filteredData.length = 0;
                 }}
                 className="dataItem"
                 href="#"
@@ -75,7 +81,6 @@ const FilteredList = (props) => {
               <a
                 onClick={function () {
                   props.setFormula(props.listOfFormula[`${key}`]);
-                  props.filteredData.length = 0;
                 }}
                 className="dataItem"
                 href="#"
