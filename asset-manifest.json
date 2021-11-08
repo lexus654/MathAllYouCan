@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/test/static/css/main.8c2530ee.chunk.css",
-    "main.js": "/test/static/js/main.16636640.chunk.js",
-    "main.js.map": "/test/static/js/main.16636640.chunk.js.map",
-    "runtime-main.js": "/test/static/js/runtime-main.b6e244a6.js",
-    "runtime-main.js.map": "/test/static/js/runtime-main.b6e244a6.js.map",
-    "static/js/2.37b7c89e.chunk.js": "/test/static/js/2.37b7c89e.chunk.js",
-    "static/js/2.37b7c89e.chunk.js.map": "/test/static/js/2.37b7c89e.chunk.js.map",
-    "static/js/3.2b7e21e0.chunk.js": "/test/static/js/3.2b7e21e0.chunk.js",
-    "static/js/3.2b7e21e0.chunk.js.map": "/test/static/js/3.2b7e21e0.chunk.js.map",
-    "index.html": "/test/index.html",
-    "static/css/main.8c2530ee.chunk.css.map": "/test/static/css/main.8c2530ee.chunk.css.map",
-    "static/js/2.37b7c89e.chunk.js.LICENSE.txt": "/test/static/js/2.37b7c89e.chunk.js.LICENSE.txt",
-    "static/media/bg.e373337b.png": "/test/static/media/bg.e373337b.png",
-    "static/media/logo.6ce24c58.svg": "/test/static/media/logo.6ce24c58.svg",
-    "static/media/logo.png": "/test/static/media/logo.e8b88646.png",
-    "static/media/math.png": "/test/static/media/math.b467700c.png"
+    "main.css": "/MathAllYouCan/static/css/main.bb3e8c5a.chunk.css",
+    "main.js": "/MathAllYouCan/static/js/main.219d393a.chunk.js",
+    "main.js.map": "/MathAllYouCan/static/js/main.219d393a.chunk.js.map",
+    "runtime-main.js": "/MathAllYouCan/static/js/runtime-main.2e7d0d79.js",
+    "runtime-main.js.map": "/MathAllYouCan/static/js/runtime-main.2e7d0d79.js.map",
+    "static/js/2.cfa8c7ac.chunk.js": "/MathAllYouCan/static/js/2.cfa8c7ac.chunk.js",
+    "static/js/2.cfa8c7ac.chunk.js.map": "/MathAllYouCan/static/js/2.cfa8c7ac.chunk.js.map",
+    "static/js/3.2b7e21e0.chunk.js": "/MathAllYouCan/static/js/3.2b7e21e0.chunk.js",
+    "static/js/3.2b7e21e0.chunk.js.map": "/MathAllYouCan/static/js/3.2b7e21e0.chunk.js.map",
+    "index.html": "/MathAllYouCan/index.html",
+    "static/css/main.bb3e8c5a.chunk.css.map": "/MathAllYouCan/static/css/main.bb3e8c5a.chunk.css.map",
+    "static/js/2.cfa8c7ac.chunk.js.LICENSE.txt": "/MathAllYouCan/static/js/2.cfa8c7ac.chunk.js.LICENSE.txt",
+    "static/media/bg.e373337b.png": "/MathAllYouCan/static/media/bg.e373337b.png",
+    "static/media/logo.6ce24c58.svg": "/MathAllYouCan/static/media/logo.6ce24c58.svg",
+    "static/media/logo.png": "/MathAllYouCan/static/media/logo.e8b88646.png",
+    "static/media/math.png": "/MathAllYouCan/static/media/math.b467700c.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.b6e244a6.js",
-    "static/js/2.37b7c89e.chunk.js",
-    "static/css/main.8c2530ee.chunk.css",
-    "static/js/main.16636640.chunk.js"
+    "static/js/runtime-main.2e7d0d79.js",
+    "static/js/2.cfa8c7ac.chunk.js",
+    "static/css/main.bb3e8c5a.chunk.css",
+    "static/js/main.219d393a.chunk.js"
   ]
 }
